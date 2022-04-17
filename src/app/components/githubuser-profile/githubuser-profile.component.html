@@ -1,69 +1,67 @@
-<div class="container">
-  <div class="row">
+<div class="row">
+  <div class="col-sm-12">
     <!-- Search form -->
     <div class="search d-flex flex-row">
       <form class="search-input d-flex flex-row">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter github username or repos..." [(ngModel)]="username" name="username" (keyup.enter)="findUser()">
+          <input type="text" class="form-control" placeholder="Enter github username or repo name" [(ngModel)]="username" name="username" (keyup.enter)="findUser()">
         </div>
         <div class="search-btn">
-          <button type="submit" class="btn btn-success">Search</button>
+          <button type="submit" class="btn">Search</button>
         </div>
       </form>
     </div>
   </div>
-
-  <div class="div" *ngIf="profile">
-    <div class="row" >
-      <div class="col-sm-3">
-        <div *ngIf="profile.avatar_url">
-          <img src="{{profile.avatar_url}}" class="img-circle img-responsive"
-          alt="Profile Picture"/>
-        </div>
-  
-        <ul class="list-group">
-          <span class="fw-bold">{{profile.name}}</span>
-          <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li> 
-          <li class="list-group-item" *ngIf="profile.company">Location: Lives in {{profile.location}}</li>
-          <li class="list-group-item" *ngIf="profile.company">Company: Works at {{profile.company}}</li>
-          <li class="list-group-item" *ngIf="profile.hireable">Available for hire</li>
-          <li class="list-group-item" *ngIf="profile.blog"><a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
-          <li class="list-group-item" *ngIf="profile.email"><a href="emailto:{{profile.email}}">{{profile.email}}</a></li>
-  
-          <li class="list-group-item btn btn-success btn-small" *ngIf="profile.html_url"><a href="{{profile.html_url}}" target="_blank">View Profile in Github</a></li>
-        </ul>
-      </div>
-  
-      <div class="col-sm-2">
-        <div>
-          <button class="btn btn-primary" *ngIf="profile.followers">{{profile.followers}} Followers</button>
-        </div>
-        <div>
-          <button class="btn btn-primary" *ngIf="profile.following">{{profile.following}} Following </button>
-        </div>
-        <div>
-          <button class="btn btn-primary" *ngIf="profile.public_gists">{{profile.public_gists}} Public Gists</button>
-        </div>
-        <div>
-          <button class="btn btn-primary" *ngIf="profile.public_repos">{{profile.public_repos}} Public Repos</button>
-        </div>
-      </div>
-  
-      <!-- Repositories -->
-      <div class="col-sm-7">
-        <h3>Repositories</h3>
-        <div class="card mt-2" *ngFor="let repo of repos">
-          <div class="card-body">
-            <h3 class="card-title">{{repo.name}}</h3>
-            <p class="card-text">{{repo.description}}</p>
-            <a href="{{repo.html_url}}" target="_blank">View repo on Github</a>
-          </div>
-        </div>
-    </div>
-    </div>
-  </div>
-
-  
-
-  
 </div>
+  <!-- User profile -->
+  <div class="row" *ngIf="profile">
+      <div class="col-sm-4">
+          <div class="user-img" *ngIf="profile.avatar_url">
+              <img src="{{profile.avatar_url}}" class="img-responsive"
+              alt="Image"/>
+          </div>
+
+          <!-- Github user info -->
+          <div class="bio">
+              <ul class="list-group">
+                  <span class="fw-bold">{{profile.name}}</span>
+                  <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li> 
+                  <li class="list-group-item" *ngIf="profile.company"><span class="fw-bold">Location:</span> Lives in {{profile.location}}</li>
+                  <li class="list-group-item" *ngIf="profile.company"><span class="fw-bold">Company:</span> Works at {{profile.company}}</li>
+                  <li class="list-group-item" *ngIf="profile.email"><span class="fw-bold">Email:</span>{{profile.email}}</li>
+                  <li class="list-group-item" *ngIf="profile.blog"><span class="fw-bold">Blog: </span><a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
+                  <li class="list-group-item" *ngIf="profile.hireable"><span class="fw-bold">Availability: </span>Available for hire</li> 
+                  <li class="list-group-item" *ngIf="profile.email"><a href="emailto:{{profile.email}}">{{profile.email}}</a></li>
+                  <li class="list-group-item" *ngIf="profile.html_url" id="github-link"><a href="{{profile.html_url}}" target="_blank">Check Profile in Github</a></li>
+              </ul>
+          </div>
+
+          <!-- Github user profile data -->
+          <div class="profile-data">
+              <div>
+                  <button class="btn mt-5" *ngIf="profile.followers">{{profile.followers}} Followers</button>
+              </div>
+              <div>
+                  <button class="btn" *ngIf="profile.following">{{profile.following}} Following </button>
+              </div>
+              <div>
+                  <button class="btn" *ngIf="profile.public_gists">{{profile.public_gists}} Public Gists</button>
+              </div>
+              <div>
+                  <button class="btn" *ngIf="profile.public_repos">{{profile.public_repos}} Public Repos</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Github user repositories -->
+      <div class="col-sm-8">
+          <h3 class="repo-heading">Repositories</h3>
+          <div class="card mt-2" *ngFor="let repo of repos">
+              <div class="card-body">
+                  <h4 class="card-title">{{repo.name}}</h4>
+                  <p class="card-text">{{repo.description}}</p>
+                  <a href="{{repo.html_url}}" target="_blank">Check repo on Github</a>
+              </div>
+          </div>
+      </div>
+  </div>
