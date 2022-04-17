@@ -1,1 +1,74 @@
-<p>my-profile works!</p>
+<div class="profile" *ngIf="info">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <!-- Bio section -->
+          <div class="col-sm-3">
+            <img src="{{info.avatar_url}}" class="img-circle img-responsive"
+            alt="Profile image"/>
+            <ul class="list-group">
+              <li class="list-group-item fw-bold" *ngIf = "info.name">{{info.name}}</li>
+              <li class="list-group-item" *ngIf = "info.location">Location: {{info.location}}</li>
+              <li class="list-group-item" *ngIf = "info.company">Company: Works at {{info.company}}</li>
+              <li class="list-group-item" *ngIf="info.bio">Bio: {{info.bio}}</li>
+              <li class="list-group-item" *ngIf="info.hireable">Available for hire</li>
+              <li class="list-group-item" *ngIf="info.blog">
+                <a href="{{info.blog}}">{{info.blog}}</a></li>
+              <li class="list-group-item" *ngIf="info.email">
+                <a href="{{info.email}}" target="_blank">Email: {{info.email}}</a></li>
+              <li class="mt-2">
+                <a href="{{info.html_url}}" target="_blank" class="btn btn-success btn-small">View Github Profile</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Following section -->
+          <div class="col-sm-2">
+            <div>
+              <div class="followers">
+                <button class="btn btn-success">{{info.followers}} Followers</button>
+              </div>
+              <div class="following mt-2">
+                <button class="btn btn-warning">{{info.following}} Following</button>
+              </div>
+              <div class="public-gists mt-2">
+                <button class="btn btn-primary">{{info.public_gists}} Public gists</button>
+              </div>
+              <div class="following mt-2">
+                <button class="btn btn-success">{{info.public_repos}} public_repos</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repositories -->
+          <div class="col-sm-7">
+            <h3 class="panel-title">Repositories</h3>
+            <div class="card mt-2" *ngFor="let repo of repos">
+            <div class="card-body">
+              <h3 class="card-title">{{repo.name}}</h3>
+              <p class="card-text">{{repo.description}}</p>
+              <a href="{{repo.html_url}}"
+                  target="_blank">View repo on Github</a>
+            </div>
+          </div>
+          </div>
+          
+          <!-- <div class="col-sm-7">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Repositories</h3>
+              </div>
+              <div class="panel-body" *ngFor="let repo of repos">
+                <p class="clearfix">
+                  {{repo.name}}
+                  <a href="{{repo.html_url}}"
+                  target="_blank">{{repo.name}}</a>
+                </p>
+                <p>{{repo.description}}</p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
