@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header">
+        <span class="btn btn-primary btn-lg mx-3">{{githubProfile.followers}} Followers</span>
+        <span class="btn btn-success btn-lg mx-3">{{githubProfile.public_repos}} Public Repositories</span>
+        <span class="btn btn-warning btn-lg mx-3">{{githubProfile.public_gists}} Gists</span>
+        <span class="btn btn-danger btn-lg mx-3">{{githubProfile.following}} Following</span>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">
+                Username: <span class="fw-bold">{{githubProfile.name}}</span>
+            </li>
+            <li class="list-group-item">
+                Location: {{githubProfile.location}}
+            </li>
+            <li class="list-group-item">
+                Email: {{githubProfile.email}}
+            </li>
+            <li class="list-group-item">
+                Member since: {{githubProfile.created_at | date}}
+            </li>
+            <li class="list-group-item">
+                Profile URL: <a [href]="githubProfile.html_url" target="_blank">Profile URL: {{githubProfile.html_url}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

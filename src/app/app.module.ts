@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserProfileDataComponent } from './components/user-profile-data/user-profile-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    UserProfileDataComponent
   ],
   imports: [
     BrowserModule,
