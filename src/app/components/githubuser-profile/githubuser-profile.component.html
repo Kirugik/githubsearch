@@ -28,6 +28,7 @@
                   <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li> 
                   <li class="list-group-item" *ngIf="profile.company"><span class="fw-bold">Location:</span> Lives in {{profile.location}}</li>
                   <li class="list-group-item" *ngIf="profile.company"><span class="fw-bold">Company:</span> Works at {{profile.company}}</li>
+                  <li class="list-group-item" *ngIf="profile.created_at"><span class="fw-bold">Member since: </span>{{profile.created_at | date}}</li>
                   <li class="list-group-item" *ngIf="profile.email"><span class="fw-bold">Email:</span>{{profile.email}}</li>
                   <li class="list-group-item" *ngIf="profile.blog"><span class="fw-bold">Blog: </span><a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
                   <li class="list-group-item" *ngIf="profile.hireable"><span class="fw-bold">Availability: </span>Available for hire</li> 

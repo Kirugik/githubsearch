@@ -15,6 +15,27 @@
   font-size: 25px;
 }
 
+#github-link {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 25px;
+  background-color: grey;
+  border: white;
+  border-radius: 15px;
+}
+
+#github-link:hover {
+  background-color: lightblue;
+}
+#github-link a {
+  text-decoration: none;
+  color: white;
+}
+
+#github-link a:hover {
+  color: black;
+}
+
 .profile-data {
   margin-top: 20px;
 }

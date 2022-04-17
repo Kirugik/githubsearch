@@ -8,15 +8,16 @@
             alt="Image"/>
             <ul class="list-group">
               <li class="list-group-item fw-bold" *ngIf = "info.name">{{info.name}}</li>
-              <li class="list-group-item" *ngIf = "info.location">Location: {{info.location}}</li>
-              <li class="list-group-item" *ngIf = "info.company">Company: Works at {{info.company}}</li>
-              <li class="list-group-item" *ngIf="info.bio">Bio: {{info.bio}}</li>
-              <li class="list-group-item" *ngIf="info.hireable">Available for hire</li>
+              <li class="list-group-item" *ngIf = "info.location"><span class="fw-bold">Location: </span>{{info.location}}</li>
+              <li class="list-group-item" *ngIf = "info.company"><span class="fw-bold">Company: </span>Works at {{info.company}}</li>
+              <li class="list-group-item" *ngIf="info.created_at"><span class="fw-bold">Member since: </span>{{info.created_at | date}}</li>
+              <li class="list-group-item" *ngIf="info.bio"><span class="fw-bold">Bio: </span>{{info.bio}}</li>
+              <li class="list-group-item" *ngIf="info.hireable"><span class="fw-bold">Availability: </span>Available for hire</li>
               <li class="list-group-item" *ngIf="info.blog">
-                <a href="{{info.blog}}">{{info.blog}}</a></li>
+                <a href="{{info.blog}}"><span class="fw-bold">Blog: </span>{{info.blog}}</a></li>
               <li class="list-group-item" *ngIf="info.email">
-                <a href="{{info.email}}" target="_blank">Email: {{info.email}}</a></li>
-              <li class="list-group-item mt-2">
+                <a href="{{info.email}}" target="_blank"><span class="fw-bold">Email: </span>{{info.email}}</a></li>
+              <li class="list-group-item mt-2" id="github-link">
                 <a href="{{info.html_url}}" target="_blank">View Github Profile</a>
               </li>
             </ul>

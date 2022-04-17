@@ -11,26 +11,15 @@ export class MyProfileComponent implements OnInit {
   repos: any = [];
 
   constructor(private myProfileService: MyProfileServiceService) {
-    // retrieving user information
+    // my profile
     this.myProfileService.getUserInfo().subscribe(info => {
       this.info = info;
     });
 
-    // retrieving user information
-    // this.myProfileService.getUserInfo()
-    // .subscribe((info: any) => {
-    // this.info.next(info.data)
-    // });
-
-    // retrieving user repositories
+    // getting repos
     this.myProfileService.getUserRepos().subscribe(repos => {
       this.repos=repos;
     });
-
-    // this.myProfileService.getUserRepos()
-    // .subscribe((repos: any) => {
-    // this.repos.next(repos.data);
-    // });
   }
   ngOnInit() {
   }

@@ -25,6 +25,11 @@
   font-size: 25px;
 }
 
+.search-btn button:hover {
+  background-color: lightblue;
+  color: black;
+}
+
 .user-img img {
   width: 350px;
   height: 350px;

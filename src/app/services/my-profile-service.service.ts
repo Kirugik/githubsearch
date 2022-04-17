@@ -5,8 +5,8 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class MyProfileServiceService {
   private username: string;
-  private client_id = "a55e9e8d03689dad4d8a";
-  private client_secret = "3ca7fcb547b2d9dd56b6a9266ec2eb73733a2674";
+  private client_id: string;
+  private client_secret: string;
 
   constructor(private http:HttpClient) {
     console.log("service is now ready!");

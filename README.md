@@ -1,27 +1,32 @@
-# Githubsearch
+# Github Search
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+This is a github search web application built with angular. It allows users to search other github users or their repositories.
 
-## Development server
+# By **Robert Kirui**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+April 18th, 2022.
 
-## Code scaffolding
+# Description
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This web application allows users to view my github profile in the landing page, and can also search other github users or their repositories by navigating to the search page and typing guithub user's name on the search bar to view all repositories for that user. Users can also search specific repositories by typing repository name on the search bar.
 
-## Build
+# Link to Live Site on GitHub Pages
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+https://kirugik.github.io/githubsearch/
 
-## Running unit tests
+# Setup/Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Fork the project from this repo
+- Run git clone https://github.com/Kirugik/githubsearch.git to have the project files in your preferred directory on the local machine.
+- Open the project folder and `ng serve` to start your server.
+- Navigate to `http://localhost:4200/` where application will be running automatically.
 
-## Running end-to-end tests
+# Technologies Used
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+HTML5, CSS, Bootstrap, Typescript, JavaScript, Angular version 13, Github API.
 
-## Further help
+# License
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Licensed under the [MIT License] (LICENSE).
+
+Copyright (c) 2022. **Robert Kirui**
