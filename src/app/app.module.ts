@@ -7,6 +7,7 @@ import { SearchComponent } from './components/search/search.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { UserProfileDataComponent } from './components/user-profile-data/user-profile-data.component';
 import { UserProfileDetailsComponent } from './components/user-profile-details/user-profile-details.component';
+import { UserReposComponent } from './components/user-repos/user-repos.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { UserProfileDetailsComponent } from './components/user-profile-details/u
     SearchComponent,
     UserProfileComponent,
     UserProfileDataComponent,
-    UserProfileDetailsComponent
+    UserProfileDetailsComponent,
+    UserReposComponent
   ],
   imports: [
     BrowserModule,
