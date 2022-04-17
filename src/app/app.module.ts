@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +9,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { UserProfileDataComponent } from './components/user-profile-data/user-profile-data.component';
 import { UserProfileDetailsComponent } from './components/user-profile-details/user-profile-details.component';
 import { UserReposComponent } from './components/user-repos/user-repos.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { UserReposComponent } from './components/user-repos/user-repos.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
