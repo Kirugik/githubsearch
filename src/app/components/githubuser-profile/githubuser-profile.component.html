@@ -4,7 +4,7 @@
     <div class="search d-flex flex-row">
       <form class="search-input d-flex flex-row">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter github username or repo name" [(ngModel)]="username" name="username" (keyup.enter)="findUser()">
+          <input type="text" class="form-control" placeholder="Enter github username or repo name" [(ngModel)]="username" name="username" (keyup)="findUser()">
         </div>
         <div class="search-btn">
           <button type="submit" class="btn">Search</button>
@@ -55,9 +55,9 @@
       </div>
 
       <!-- Github user repositories -->
-      <div class="col-sm-8">
+      <div class="col-sm-8" *ngFor="let repo of repos">
           <h3 class="repo-heading">Repositories</h3>
-          <div class="card mt-2" *ngFor="let repo of repos">
+          <div class="card mt-2">
               <div class="card-body">
                   <h4 class="card-title">{{repo.name}}</h4>
                   <p class="card-text">{{repo.description}}</p>

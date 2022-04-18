@@ -10,13 +10,15 @@ import { GithubuserProfileComponent } from './components/githubuser-profile/gith
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MyProfileServiceService } from "./services/my-profile-service.service";
 import { GithubProfileServiceService } from './services/githubuser-profile-service.service';
+import { ToUppercasePipe } from './to-uppercase.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyProfileComponent,
     GithubuserProfileComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ToUppercasePipe
   ],
   imports: [
     BrowserModule,
